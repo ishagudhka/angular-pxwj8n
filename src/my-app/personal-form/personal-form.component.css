@@ -1,0 +1,39 @@
+.form {
+  margin: 4px;
+  padding: 2px;
+}
+form input {
+  width: 100%;
+  margin-top: 2px;
+}
+.formgroupSkill {
+  width: 50%;
+}
+
+.formgroup {
+  margin-top: 10px;
+}
+
+.btn,
+.btn-skill,
+.btnDefault {
+  padding: 10px;
+  margin-top: 10px;
+  background-color: rgb(33, 92, 231);
+  color: white;
+  border: 1px solid rgb(33, 92, 231);
+  font-size: 14px;
+}
+.btn-skill {
+  background-color: rgb(114, 46, 216);
+  border: 1px solid rgb(114, 46, 216);
+}
+.btnDefault {
+  background-color: rgb(38, 194, 85);
+  border: 1px solid rgb(38, 194, 85);
+}
+.select {
+  width: 100%;
+  margin-top: 2px;
+  height: 25px;
+}

@@ -1,0 +1,5 @@
+<button class="btn" (click)="clickPersonal()">Personal Forms</button>
+<button class="btn" (click)="clickProfessional()">Professional Forms</button>
+<app-personal-form></app-personal-form>
+<app-professional-form *ngIf="professional"></app-professional-form>
+<!-- *ngIf="personal" -->

@@ -1,0 +1,55 @@
+<div class="formDiv">
+  <form [formGroup]="personalForm" class="form">
+    <button class="btnDefault" (click)="getData()">Get Default Values</button>
+    <div class="formgroup">
+      <label>First Name:</label>
+      <input
+        type="text"
+        formControlName="firstName"
+        placeholder="Enter first name"
+      />
+    </div>
+    <div class="formgroup">
+      <label>Last Name:</label>
+      <input
+        type="text"
+        formControlName="lastName"
+        placeholder="Enter last name"
+      />
+    </div>
+    <div class="formgroup" formGroupName="contacts">
+      <label>Email</label>
+      <input type="email" formControlName="email" />
+      <label>Contact Type</label>
+      <select class="select" formControlName="contactType">
+        <option value="-1">--Select--</option>
+        <option value="email">Email</option>
+        <option value="phone">Phone</option>
+      </select>
+      <label>Phone Number</label>
+      <input type="text" formControlName="phone" />
+    </div>
+    <div formArrayName="skills">
+      <button class="btn-skill" (click)="addSkills()">Add skill</button>
+      <ng-container *ngFor="let skillForm of skillsArr.controls; let i = index">
+        {{ i }}
+        <div class="row" [formGroupName]="i">
+          <div class="formgroupSkill">
+            <label>Programming language</label>
+            <input type="text" formControlName="program" />
+          </div>
+          <div class="formgroupSkill">
+            <label>Experience</label>
+            <input
+              type="text"
+              formControlName="experience"
+              placeholder="Enter first name"
+            />
+          </div>
+        </div>
+        <button (click)="deleteSkills(i)">Delete</button>
+      </ng-container>
+    </div>
+    <button class="btn" (click)="onSubmit()">Submit</button>
+  </form>
+</div>
