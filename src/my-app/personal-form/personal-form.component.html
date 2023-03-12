@@ -1,13 +1,27 @@
 <div class="formDiv">
   <form [formGroup]="personalForm" class="form">
     <button class="btnDefault" (click)="getData()">Get Default Values</button>
+    <button class="btnDefault2" (click)="updatePartialValue()">
+      Get Partial Values
+    </button>
     <div class="formgroup">
       <label>First Name:</label>
+
       <input
         type="text"
         formControlName="firstName"
         placeholder="Enter first name"
       />
+
+      <div
+        class="danger"
+        *ngIf="
+          personalForm.get('firstName').errors &&
+          personalForm.get('firstName').errors.minlength.requiredLength
+        "
+      >
+        Minimum length required
+      </div>
     </div>
     <div class="formgroup">
       <label>Last Name:</label>

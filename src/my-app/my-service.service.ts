@@ -5,6 +5,6 @@ export class MyServiceService {
   constructor(private http: HttpClient) {}
 
   getData() {
-    return this.http.get('./data.json');
+    return this.http.get('/assets/data.json');
   }
 }

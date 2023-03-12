@@ -3,7 +3,8 @@
   "lastName": "Gudhka",
   "contacts": {
     "email": "ishagudhka3006@gmail.com",
-    "phone": "9769383239"
+    "phone": "9769383239",
+    "contactType": "phone"
   },
   "skills": []
 }

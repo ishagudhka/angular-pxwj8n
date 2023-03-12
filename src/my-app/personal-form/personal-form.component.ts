@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormArray } from '@angular/forms';
+import { FormBuilder, FormArray, Validators } from '@angular/forms';
 import { MyServiceService } from '../my-service.service';
 
 @Component({
@@ -15,7 +15,7 @@ export class PersonalFormComponent implements OnInit {
   constructor(private fb: FormBuilder, private appService: MyServiceService) {}
   data;
   personalForm = this.fb.group({
-    firstName: [''],
+    firstName: ['', [Validators.required, Validators.minLength(3)]],
     lastName: [''],
     contacts: this.fb.group({
       email: [''],
@@ -45,15 +45,15 @@ export class PersonalFormComponent implements OnInit {
     console.log(this.personalForm.value);
   }
   getData() {
-    this.personalForm.setValue({
-      firstName: 'isha',
-      lastName: 'Gudhka',
-      contacts: {
-        email: 'ishagudhka3006@gmail.com',
-        phone: '9769383239',
-        contactType: 'phone',
-      },
-      skills: [],
+    this.appService.getData().subscribe((data) => {
+      console.log(data);
+      this.data = data;
+      this.personalForm.setValue(this.data);
+    });
+  }
+  updatePartialValue() {
+    this.personalForm.patchValue({
+      lastName: 'Shah',
     });
   }
 }

@@ -16,7 +16,8 @@ form input {
 
 .btn,
 .btn-skill,
-.btnDefault {
+.btnDefault,
+.btnDefault2 {
   padding: 10px;
   margin-top: 10px;
   background-color: rgb(33, 92, 231);
@@ -32,8 +33,16 @@ form input {
   background-color: rgb(38, 194, 85);
   border: 1px solid rgb(38, 194, 85);
 }
+.btnDefault2 {
+  margin-left: 10px;
+  background-color: rgb(37, 241, 99);
+  border: 1px solid rgb(38, 194, 85);
+}
 .select {
   width: 100%;
   margin-top: 2px;
   height: 25px;
+}
+.danger {
+  color: red;
 }
